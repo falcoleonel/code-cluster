@@ -1,0 +1,41 @@
+﻿<Window x:Class="AtomosYReglas.Encadenamiento"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AtomosYReglas"
+        mc:Ignorable="d"
+        Title="Encadenamiento" Height="298.8" Width="725.6">
+    <Grid>
+        <ListView x:Name="reglasOriginales" HorizontalAlignment="Left" Height="143" Margin="10,52,0,0" VerticalAlignment="Top" Width="236">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Reglas" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="19" />
+        <Button x:Name="botonAtras" Content="Button" HorizontalAlignment="Left" Margin="328,200,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.064,0.344" IsEnabled="False" Click="BotonAtras_Click"/>
+        <Label Content="Ingresar conclusión:" HorizontalAlignment="Left" Margin="284,169,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.896,0.023"/>
+        <TextBox x:Name="txtAtomoAtras" HorizontalAlignment="Left" Height="23" Margin="404,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" FontSize="10" IsEnabled="False"/>
+        <ListView x:Name="reglasFinales" HorizontalAlignment="Left" Height="143" Margin="476,52,0,0" VerticalAlignment="Top" Width="236">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Conclusiones" HorizontalAlignment="Left" Margin="476,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="19" />
+        <TextBlock x:Name="textoError" HorizontalAlignment="Center" Margin="476,200,7.2,47.6" TextWrapping="Wrap" VerticalAlignment="Center" Width="236" Height="22" FontSize="14" FontWeight="SemiBold" Foreground="#FFFF1B00"/>
+        <Button x:Name="botonAdelante" Content="Button" HorizontalAlignment="Left" Margin="328,106,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.064,0.344" IsEnabled="False" Click="BotonAdelante_Click"/>
+        <Label Content="Ingrese valor del atomo" HorizontalAlignment="Left" Margin="301,52,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.896,0.023"/>
+        <TextBox x:Name="txtAtomoAdelante" HorizontalAlignment="Left" Height="23" Margin="301,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" FontSize="10" IsEnabled="False" Focusable="False" AllowDrop="False"/>
+        <ComboBox x:Name="cmbAdelante" HorizontalAlignment="Left" Margin="362,78,0,0" VerticalAlignment="Top" Width="75" IsEnabled="False">
+            <ListBoxItem Content="1"/>
+            <ListBoxItem Content="0"/>
+        </ComboBox>
+        <CheckBox x:Name="chkAtras" Content="Hacia atrás" HorizontalAlignment="Left" Margin="267,154,0,0" VerticalAlignment="Top" Checked="ChkAtras_Checked" Unchecked="ChkAtras_Unchecked"/>
+        <CheckBox x:Name="chkAdelante" Content="Hacia adelante" HorizontalAlignment="Left" Margin="267,37,0,0" VerticalAlignment="Top" Checked="ChkAdelante_Checked" Unchecked="ChkAdelante_Unchecked"/>
+
+    </Grid>
+</Window>

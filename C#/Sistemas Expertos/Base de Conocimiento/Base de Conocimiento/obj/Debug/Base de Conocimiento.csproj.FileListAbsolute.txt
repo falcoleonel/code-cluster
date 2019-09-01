@@ -1,0 +1,61 @@
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csprojAssemblyReference.cache
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.g.cs
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\App.g.cs
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.cache
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.lref
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe.config
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.pdb
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.baml
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.g.resources
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base_de_Conocimiento.Properties.Resources.resources
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.GenerateResource.cache
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.CoreCompileInputs.cache
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.exe
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.pdb
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.g.cs
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.g.cs
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.baml
+C:\Users\danvc\Codigos\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.baml
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe.config
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.pdb
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csprojAssemblyReference.cache
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.g.cs
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.g.cs
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.g.cs
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\App.g.cs
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.cache
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.lref
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.baml
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.baml
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.baml
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.g.resources
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base_de_Conocimiento.Properties.Resources.resources
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.GenerateResource.cache
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.CoreCompileInputs.cache
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.exe
+G:\Daniel\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.pdb
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csprojAssemblyReference.cache
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\EncadenamientoAdelante.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\EncadenamientoAtras.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\App.g.cs
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.cache
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento_MarkupCompile.lref
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe.config
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.exe
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\bin\Debug\Base de Conocimiento.pdb
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarProposicion.baml
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\AgregarRegla.baml
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\EncadenamientoAdelante.baml
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\EncadenamientoAtras.baml
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\MainWindow.baml
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.g.resources
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base_de_Conocimiento.Properties.Resources.resources
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.GenerateResource.cache
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.csproj.CoreCompileInputs.cache
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.exe
+C:\Users\danvc\Code-Ceti\C#\Sistemas Expertos\Base de Conocimiento\Base de Conocimiento\obj\Debug\Base de Conocimiento.pdb

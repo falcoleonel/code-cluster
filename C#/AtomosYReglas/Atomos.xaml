@@ -1,0 +1,22 @@
+﻿<Window x:Name="AgregarAtomos" x:Class="AtomosYReglas.Atomos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AtomosYReglas"
+        mc:Ignorable="d"
+        Title="Agregar Atomos" Height="372.4" Width="425.6" ResizeMode="NoResize">
+    <Grid>
+        <Rectangle Height="61" Margin="0,0,-0.4,0" Stroke="Black" VerticalAlignment="Top" Fill="#FF96BA3F"/>
+        <Label Content="Agregar Átomos" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Segoe UI Black" Foreground="Black" Width="177"/>
+        <ListBox x:Name="listaAtomos" HorizontalAlignment="Left" Height="206" Margin="34,0,0,24.2" VerticalAlignment="Bottom" Width="144"/>
+        <TextBox x:Name="txtAtomo" Height="20" Margin="0,113,55.2,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="142" VerticalScrollBarVisibility="Disabled" PreviewTextInput="txtAtomo_PreviewTextInput"/>
+        <Label Content="Ingrese el Átomo" Height="24" Margin="0,84,68.2,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="129"/>
+        <Button x:Name="btnGuardar" Content="Guardar" Margin="0,158,97.2,146.2" FontFamily="Segoe UI Black" HorizontalAlignment="Right" Width="74" Click="Button_Click" IsDefault="True">
+            <Button.Background>
+                <SolidColorBrush Color="#FF3AC345"/>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

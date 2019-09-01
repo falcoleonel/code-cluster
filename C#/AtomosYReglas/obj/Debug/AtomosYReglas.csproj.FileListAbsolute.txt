@@ -1,0 +1,38 @@
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\bin\Debug\AtomosYReglas.exe.config
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\bin\Debug\AtomosYReglas.exe
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\bin\Debug\AtomosYReglas.pdb
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.csprojAssemblyReference.cache
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\App.g.cs
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas_MarkupCompile.cache
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas_MarkupCompile.lref
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.g.resources
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.Properties.Resources.resources
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.csproj.GenerateResource.cache
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.csproj.CoreCompileInputs.cache
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.exe
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\AtomosYReglas.pdb
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Principal.g.cs
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Atomos.g.cs
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Reglas.g.cs
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Principal.baml
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Atomos.baml
+C:\Users\falco\Documents\6° Semestre\Sistemas Expertos\AtomosYReglas\obj\Debug\Reglas.baml
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\bin\Debug\AtomosYReglas.exe.config
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\bin\Debug\AtomosYReglas.exe
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\bin\Debug\AtomosYReglas.pdb
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.csprojAssemblyReference.cache
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Principal.g.cs
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Atomos.g.cs
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Reglas.g.cs
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\App.g.cs
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas_MarkupCompile.cache
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas_MarkupCompile.lref
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Principal.baml
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Atomos.baml
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\Reglas.baml
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.g.resources
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.Properties.Resources.resources
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.csproj.GenerateResource.cache
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.csproj.CoreCompileInputs.cache
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.exe
+C:\Users\danvc\Code-Ceti\C#\AtomosYReglas\obj\Debug\AtomosYReglas.pdb
