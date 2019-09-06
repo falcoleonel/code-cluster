@@ -1,0 +1,89 @@
+function Transformaciones()
+I=imread('interstellar.jpg');
+R = I(:,:,1);
+G = I(:,:,2);
+B = I(:,:,3);
+
+%muestro imagen original en escala de grises
+figure('Name','Imagen en Gris')
+grey = (R *.299 + G *.587 +  B *.114);
+imshow(grey); 
+
+[M,N]=size(I(:,:,1));}
+
+matriz=[[1,0,0;0,1,0,;0,0,1]];
+for x=1:M
+   for y=1:N
+       pIde=[x,y,1]; %punto
+       pIde=([x,y,1]*matriz); %alterando el punto con las matrices de transformacion
+       iIdenti(pIde(1,1),pIde(1,2))=I(x,y);
+   end
+end
+figure('Name','Identidad')
+imshow(iIdenti);
+
+matriz=[[2,0,0;0,2,0;0,0,1]];
+for x=1:M
+   for y=1:N
+       pEscala=[x,y,1];
+       pEscala=([x,y,1]*matriz);
+      iEscala(pEscala(1,1),pEscala(1,2))=I(x,y);
+   end
+end
+figure('Name','Escalamiento')
+imshow(iEscala);
+
+angulo=-.6;
+matriz=[[cos(angulo),sin(angulo),0;-sin(angulo),cos(angulo),0;0,0,1]];
+for x=1:M
+    for y=1:N
+        pRota=[x,y,1];
+        pRota=([x,y,1]*matriz);
+        %pixeles adicionales
+        v=round(pRota(1,1));%+60;  
+        w=round(pRota(1,2));%+600;
+       iRota(v,w)=I(x,y);
+   end
+end
+figure('Name','Rotación')
+imshow(iRota);
+
+matriz=[1,0,0;0,1,0;10,70,1];
+for x=1:M
+    for y=1:N
+        pTrasla=[x,y,1];
+        pTrasla=([x,y,1]*matriz);
+        v=pTrasla(1,1); %nuevo x
+        w=pTrasla(1,2); %nuevo y
+        iTrasla(v,w)=I(x,y);
+    end
+end
+figure('Name','Traslación')
+imshow(iTrasla);
+
+matriz=[1,0,0;.5,1,0;0,0,1];
+for x=1:M
+    for y=1:N
+        c5=[x,y,1];
+        c5=([x,y,1]*matriz);
+        v=round(c5(1,1));
+        w=round(c5(1,2));
+        nva5(v,w)=I(x,y);
+    end
+end
+figure('Name','Sesgo vertical')
+imshow(nva5);
+
+matriz=[1,.5,0;0,1,0;0,0,1];
+for x=1:M
+    for y=1:N
+        c6=[x,y,1];
+        c6=([x,y,1]*matriz);
+        v=round(c6(1,1));
+        w=round(c6(1,2));
+        nva6(v,w)=I(x,y);
+    end
+end
+figure('Name','Sesgo horizontal')
+imshow(nva6);
+end
