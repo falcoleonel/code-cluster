@@ -3,29 +3,32 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.*;
+
 public class Calculator1 extends JPanel implements ActionListener {
-      double firstnum;
-        double secondnum;
-        double answer;
-        String sanswer;
-        int operation = 0;
-    protected JButton zero, one, two,three,four,five,six,seven,eight,nine,equal,multiply,decmal,minus,plus,divide;
+    double firstnum;
+    double secondnum;
+    double answer;
+    String sanswer;
+    int operation = 0;
+    protected JButton zero, one, two, three, four, five, six, seven, eight, nine, equal, multiply, decmal, minus, plus,
+            divide;
     JTextField screen;
     GridBagConstraints constraints = new GridBagConstraints();
 
     public Calculator1() {
+
         setLayout(new GridBagLayout());
         constraints.weightx = 1.0;
         constraints.weighty = 1.0;
         constraints.fill = GridBagConstraints.BOTH;
         constraints.gridy = 0;
         constraints.gridx = 0;
-        constraints.gridwidth = 5; 
+        constraints.gridwidth = 5;
 
-        screen = new JTextField(20);    
-       add(screen, constraints);
-       constraints.gridy = 1;
-       constraints.gridwidth = 1; 
+        screen = new JTextField(20);
+        add(screen, constraints);
+        constraints.gridy = 1;
+        constraints.gridwidth = 1;
 
         seven = new JButton("7");
         seven.setActionCommand("eseven");
@@ -118,39 +121,39 @@ public class Calculator1 extends JPanel implements ActionListener {
             screen.setText(pnum + '1');
         }
         if ("etwo".equals(e.getActionCommand())) {
-                      String pnum = screen.getText();
-            screen.setText(pnum + '2');  
+            String pnum = screen.getText();
+            screen.setText(pnum + '2');
         }
         if ("ethree".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '3');
         }
         if ("efour".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '4');
         }
         if ("efive".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '5');
         }
         if ("esix".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '6');
         }
         if ("eseven".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '7');
         }
         if ("eeight".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '8');
         }
         if ("enine".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '9');
         }
         if ("ezero".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '0');
         }
         if ("eplus".equals(e.getActionCommand())) {
@@ -164,7 +167,7 @@ public class Calculator1 extends JPanel implements ActionListener {
             screen.setText("");
         }
         if ("emultiply".equals(e.getActionCommand())) {
-                        firstnum = (Double.parseDouble(screen.getText()));
+            firstnum = (Double.parseDouble(screen.getText()));
             operation = 3;
             screen.setText("");
         }
@@ -175,61 +178,57 @@ public class Calculator1 extends JPanel implements ActionListener {
         }
         if ("eequals".equals(e.getActionCommand())) {
             secondnum = (Double.parseDouble(screen.getText()));
-            
-                if (operation == 1)
-                {
+
+            if (operation == 1) {
                 screen.setText("");
                 answer = firstnum + secondnum;
                 sanswer = Double.toString(answer);
                 screen.setText(sanswer);
-                }
- if (operation == 2)
-                {
+            }
+            if (operation == 2) {
                 screen.setText("");
                 answer = firstnum - secondnum;
                 sanswer = Double.toString(answer);
                 screen.setText(sanswer);
- }
-          if (operation == 3)
-                {
+            }
+            if (operation == 3) {
                 screen.setText("");
                 answer = firstnum * secondnum;
                 sanswer = Double.toString(answer);
                 screen.setText(sanswer);
-          }
-          if (operation == 4)
-                {
+            }
+            if (operation == 4) {
                 screen.setText("");
                 answer = firstnum / secondnum;
                 sanswer = Double.toString(answer);
                 screen.setText(sanswer);
-           
-                }
+
             }
+        }
         if ("edecmal".equals(e.getActionCommand())) {
-                        String pnum = screen.getText();
+            String pnum = screen.getText();
             screen.setText(pnum + '.');
         }
     }
+
     public static void createAndShowGUI() {
-        //Create and set up the window.
         JFrame frame = new JFrame("Calculator1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //Create and set up the content pane.
+
         Calculator1 newContentPane = new Calculator1();
-        newContentPane.setOpaque(true); //content panes must be opaque
+
         frame.setContentPane(newContentPane);
         frame.setSize(400, 500);
         frame.setLocation(200, 200);
-        //Display the window.
-        // frame.pack();
+
         frame.setVisible(true);
-        
+
     }
+
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                createAndShowGUI(); 
+                createAndShowGUI();
             }
         });
     }
