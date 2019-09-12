@@ -212,7 +212,7 @@ public class Calculadora extends JPanel implements ActionListener {
     }
 
     public static void createAndShowGUI() {
-        JFrame frame = new JFrame("Calculator1");
+        JFrame frame = new JFrame("Calculadora");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Calculadora newContentPane = new Calculadora();
