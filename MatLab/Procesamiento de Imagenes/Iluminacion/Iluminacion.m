@@ -14,7 +14,7 @@ for x=1:M
 end
 
 figure('Name','Histograma')
-plot(h);
+bar(h);
 
 
 h2=zeros(1,256);
@@ -23,5 +23,5 @@ for i=1:256
     h2(1,i)=(((1/(M*N)))*i)*h(1,i);
 end
 figure('Name','Iluminación')
-stem(h2);
+plot(h2);
 end

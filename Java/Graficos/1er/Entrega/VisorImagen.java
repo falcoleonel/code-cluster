@@ -15,7 +15,7 @@ public class VisorImagen extends JFrame {
 		panel.setViewportView(pantalla);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setSize(400, 300);
+		setSize(1200, 900);
 		setVisible(true);
 	}
 

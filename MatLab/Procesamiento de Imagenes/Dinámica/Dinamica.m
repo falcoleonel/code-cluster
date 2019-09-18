@@ -20,6 +20,6 @@ for i=1:256
         h2=h2+1;
     end
 end
-figure('Name','Contraste')
+figure('Name','Dinamica')
 stem(h2);
 end
