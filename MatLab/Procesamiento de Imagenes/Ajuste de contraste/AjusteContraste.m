@@ -23,11 +23,11 @@ for i=1:256
     if(Plow==0&&h(1,i)~=0)
         Plow=i;
     end
-    
+   
 end
 I2=I;
-Pmax=Phigh+100;
-Pmin=Plow-100;
+Pmax=Phigh+170;
+Pmin=Plow-170;
 for x=1:M
     for y=1:N
         I2(x,y)=round(((I(x,y)-Plow)*((Pmax-Pmin)/(Phigh-Plow)))+Pmin);
@@ -44,5 +44,9 @@ for x=1:M
     end
 end
 figure('Name','Histograma')
-bar(h2);
+stem(h2);
+
+figure('Name','imadjust')
+J=imadjust(I);
+imshow(J);
 end

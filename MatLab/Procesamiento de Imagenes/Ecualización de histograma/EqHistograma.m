@@ -42,10 +42,14 @@ end
 figure('Name','Histograma ecualizado')
 bar(eqh);
 
+
 eqH(1)=0;
 for i=2:256
     eqH(i)=eqH(i-1)+eqh(1,i);
 end
 figure('Name','Histograma Acumulado ecualizado')
 bar(eqH);
+
+figure('Name','histeq')
+histeq(I,eqH);
 end

@@ -1,0 +1,14 @@
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\bin\Debug\netcoreapp2.2\EjemploRESTAPI.deps.json
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\bin\Debug\netcoreapp2.2\EjemploRESTAPI.runtimeconfig.json
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\bin\Debug\netcoreapp2.2\EjemploRESTAPI.runtimeconfig.dev.json
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\bin\Debug\netcoreapp2.2\EjemploRESTAPI.dll
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\bin\Debug\netcoreapp2.2\EjemploRESTAPI.pdb
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.csprojAssemblyReference.cache
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.csproj.CoreCompileInputs.cache
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.RazorAssemblyInfo.cache
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.RazorAssemblyInfo.cs
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.AssemblyInfoInputs.cache
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.AssemblyInfo.cs
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.RazorTargetAssemblyInfo.cache
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.dll
+C:\Users\danvc\Code-Cluster\C#\Ejemplos ASP\EjemploRESTAPI\EjemploRESTAPI\obj\Debug\netcoreapp2.2\EjemploRESTAPI.pdb

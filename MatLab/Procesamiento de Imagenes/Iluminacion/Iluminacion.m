@@ -23,5 +23,5 @@ for i=1:256
     h2(1,i)=(((1/(M*N)))*i)*h(1,i);
 end
 figure('Name','Iluminación')
-plot(h2);
+stem(h2);
 end
