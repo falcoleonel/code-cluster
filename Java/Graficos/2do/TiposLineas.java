@@ -9,13 +9,11 @@ public class TiposLineas extends JFrame
 
     public TiposLineas()
     {
-        int ancho = 500, alto = 500;
+        int ancho = 800, alto = 600;
 
         setSize( ancho, alto );
-
         setTitle("linea discontinua");
         setLocationRelativeTo( null );
-
         setDefaultCloseOperation( EXIT_ON_CLOSE );
         setVisible( true );
 
@@ -26,21 +24,20 @@ public class TiposLineas extends JFrame
     public static void main( String[] args)
     {
         TiposLineas linea =  new TiposLineas();
-        linea.drawLine(20, 100, 200, 100, new Color(123, 36, 28));
-        linea.drawLine(20, 100, 200, 100, new Color(123, 36, 28));
-        linea.drawLine(400, 100, 250, 100, new Color(46, 134, 193));
+        linea.drawLine(100, 100, 375, 100, new Color(0, 102, 204));
+        linea.drawLine(700, 100, 425, 100, new Color(0, 102, 204));
 
-        linea.drawLine(125, 160, 125, 300, new Color(46, 134, 193));
-        linea.drawLine(320, 300, 320, 160, new Color(123, 36, 28));
+        linea.drawLine(125, 360, 125, 600, new Color(0, 102, 204));
+        linea.drawLine(675, 600, 675, 360, new Color(0, 102, 204));
 
-        linea.drawLine(50, 350, 150, 480, new Color(123, 36, 28));
-        linea.drawLine(300, 480, 400, 350, new Color(46, 134, 193));
+        linea.drawLine(50, 250, 150, 380, new Color(0, 102, 204));
+        linea.drawLine(650, 380, 750, 250, new Color(0, 102, 204));
 
     }
 
     public void drawLine (int x1, int y1, int x2, int y2, Color color)
     {   
-        // línea discontinua
+        // linea discontinua
         int p, a, b, x = x1, y = y1, mascara = 0;
 
         int dx = (x2 - x1);
@@ -51,11 +48,9 @@ public class TiposLineas extends JFrame
 
         dy *= stepy;
         dx *= stepx;
-        // 1111000 se pintan 4 pixeles y se saltan 3
 
         if(dx > dy) {
             p = 2 * dy - dx;
-
             a = 2 * dy;
             b = 2 * (dy - dx);
 
@@ -82,7 +77,6 @@ public class TiposLineas extends JFrame
 
             while (y != y2)
             {
-                    //Formula
                 if (p < 0) 
                     p += a;
                 else {
@@ -103,6 +97,4 @@ public class TiposLineas extends JFrame
         buffer.setRGB(0, 0, color.getRGB());
         this.getGraphics().drawImage(buffer, x, y, this);        
     }
-
-
 }

@@ -9,13 +9,11 @@ public class Figuras extends JFrame
 
     public Figuras()
     {
-        int ancho = 500, alto = 500;
+        int ancho = 800, alto = 600;
 
         setSize( ancho, alto );
-
         setTitle("Figuras");
         setLocationRelativeTo( null );
-
         setDefaultCloseOperation( EXIT_ON_CLOSE );
         setVisible( true );
 
@@ -26,28 +24,27 @@ public class Figuras extends JFrame
     public static void main( String[] args)
     {
         Figuras figura =  new Figuras();
+    
+        figura.drawLine(75, 80, 155, 160, new Color(0, 153, 0));
+        figura.drawLine(155, 160, 370, 160, new Color(0, 102, 204));
+        figura.drawLine(705, 80, 625, 160, new Color(0, 102, 204));
+        figura.drawLine(625, 160, 410, 160, new Color(0, 153, 0));
 
-        figura.drawLine(25, 140, 105, 220, new Color(46, 134, 193));
-        figura.drawLine(25, 140, 105, 220, new Color(46, 134, 193));
-        figura.drawLine(125, 180, 205, 180, new Color(123, 36, 28 ));
-        figura.drawLine(225, 220, 305, 140, new Color(46, 134, 193));
-        figura.drawLine(405, 180, 325, 180,new Color(123, 36, 28 ));
+        figura.drawCircle(388, 220, 41, new Color(0, 153, 0));
+        figura.drawCircle(388, 220, 29, new Color(0, 102, 204));
+        figura.drawCircle(388, 220, 17, new Color(0, 153, 0));
+        figura.drawCircle(388, 220, 5, new Color(0, 153, 0));
 
-        figura.drawCircle(65, 370, 41, new Color(46, 134, 193));
-        figura.drawCircle(65, 370, 29, new Color(123, 36, 28 ));
-        figura.drawCircle(65, 370, 17, new Color(46, 134, 193));
-        figura.drawCircle(65, 370, 5, new Color(123, 36, 28 ));
+        figura.drawRectangle(100, 180, 340, 400, new Color(0, 153, 0));
+        figura.drawRectangle(440, 180, 680, 400, new Color(0, 153, 0));
 
-        figura.drawRectangle(130, 340, 230, 400, new Color(46, 134, 193));
-        figura.drawRectangle(150, 360, 210, 380, new Color(123, 36, 28 ));
-
-        figura.drawOval(325, 370, 68, 35, new Color(46, 134, 193));
-        figura.drawOval(325, 370, 57, 25, new Color(123, 36, 28 ));
-        figura.drawOval(325, 370, 46, 15, new Color(46, 134, 193));
-        figura.drawOval(325, 370, 34, 5, new Color(123, 36, 28 ));
-
+        figura.drawOval(388, 500, 110, 50, new Color(0, 102, 204));
+        figura.drawOval(388, 500, 90, 40, new Color(0, 153, 0));
+        figura.drawOval(388, 500, 70, 30, new Color(0, 102, 204));
+        figura.drawOval(388, 500, 50, 20, new Color(0, 102, 204));
     }
 
+    //metodos
     public void drawCircle(int x1, int y1, int R, Color color)
     {
         int x = 0;
@@ -104,18 +101,15 @@ public class Figuras extends JFrame
 
     public void drawOval(int cx, int cy, int rx, int ry, Color color) {
 
-        double lr = ( rx > ry) ? rx : ry ; //El radio más largo
-        double max = Math.PI * .5; //Límite de t pi/5 (45)
+        double lr = ( rx > ry) ? rx : ry ; 
+        double max = Math.PI * .5; 
 
-        double x, y, step = 1.0 / lr; //Pasos 1/radio más largo
+        double x, y, step = 1.0 / lr;
 
         for (double t = 0; t <= max; t += step)
         {
-            //incremento del ángulo suficientemente pequeño
-            //para evitar los huecos
             x = Math.round(rx * Math.sin(t));
             y = Math.round(ry * Math.cos(t));
-            // Cuadrantes
             putPixel(cx + (int)x, cy + (int)y, color);
             putPixel(cx - (int)x, cy + (int)y, color);
             putPixel(cx + (int)x, cy - (int)y, color);
@@ -133,7 +127,6 @@ public class Figuras extends JFrame
     public void drawRectangle(int x1, int y1, int x2, int y2,  Color color) {
         int temp = 0;
 
-        //empezar desde el valor más pequeño hasta el más grande
         if (x1 > x2) {
             temp = x1;
             x1 = x2;
@@ -146,19 +139,13 @@ public class Figuras extends JFrame
             y2 = temp;
         }
 
-        //Iterar de x1 a x2 con los mismos valores de y
         for(int x = x1; x <= x2; x++){
             putPixel(x, y1, color); 
             putPixel(x, y2, color); 
         }
-
-        //Iterar de y1 a y2 con los mismos valores de x
         for(int y = y1; y <= y2; y++){
             putPixel(x1, y, color); 
             putPixel(x2, y, color); 
         }
-
     }
-
-
 }

@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class FloodFill extends JFrame {
+public class Inundacion extends JFrame {
 
     private Image imgPixel;
     private Graphics graPixel;
@@ -20,7 +20,7 @@ public class FloodFill extends JFrame {
 
     BufferedImage miBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
     
-    public FloodFill(){ 
+    public Inundacion(){ 
         this.setSize(width, height); 
         this.setVisible(true); 
         this.setLocationRelativeTo(null);
@@ -33,22 +33,22 @@ public class FloodFill extends JFrame {
     public void update(){
           
         drawRectangle(450,400,550,210);
-        floodFill(460,350,"RED");
+        Inundacion(460,350,"YELLOW");
         drawRectangle(750,400,850,260);
-        floodFill(760,350,"BLACK");
+        Inundacion(760,350,"BROWN");
 
         drawOval(150, 150, 110, 38);
-        floodFill(160, 160,"ORANGE");  
+        Inundacion(160, 160,"ORANGE");  
 
         drawCircle(690, 130, 55); 
-        floodFill(700, 135,"BLUE");
+        Inundacion(700, 135,"RED");
 
         this.getGraphics().drawImage(miBuffer, 1, 1, this);        
     }
     
     
     public static void main(String[] args) {     
-        new FloodFill();
+        new Inundacion();
     }
       
     
@@ -188,12 +188,9 @@ public class FloodFill extends JFrame {
                  while(x < y){
                      x++;
                 if(p<0){
-            
             p = p + 2*x+6;
                     }
-            
                     else{
-            
             y = y - 1;
             p = p +(2*(x-y))+1;
              }  
@@ -232,19 +229,15 @@ public class FloodFill extends JFrame {
                 putPixel(cx - y, cy - x, "BLUE");
             }
             if (p >= 0) {
-
                 dy += 2;
                 p += dy; 
                 y--;
             }
-
             dx += 2;
             p += dx;
             x++;
-
             mascara = (mascara < 7) ? mascara + 1 : 0 ;
         }
-        
     } 
     
     
@@ -265,9 +258,7 @@ public class FloodFill extends JFrame {
             {
                 diferencia +=fa2 * (1-y);
                 y--;
-
             }
-
             diferencia += b2 *((4*x)+6);  
         }
 
@@ -282,14 +273,10 @@ public class FloodFill extends JFrame {
             {
                 diferencia +=fb2 * (1-x);
                 x--;
-
             }
-
             diferencia += a2 *((4*y)+6);  
         }
-        
     }   
-    
     
    public void drawRectangle(int x1, int y1, int x2, int y2)
     {
@@ -299,7 +286,7 @@ public class FloodFill extends JFrame {
         drawLine(x1,y2, x2,y2,1,"BLACK");
     }
     
-    public  void floodFill(int x,int y, String fillColor)
+    public  void Inundacion(int x,int y, String fillColor)
     {
        
       BufferedImage image = miBuffer;     
@@ -324,6 +311,4 @@ public class FloodFill extends JFrame {
         }
       }
     }
-    
-    
 }

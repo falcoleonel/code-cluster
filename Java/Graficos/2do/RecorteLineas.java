@@ -12,12 +12,11 @@ public class RecorteLineas extends JFrame
 
     public RecorteLineas()
     {     	
-        int ancho = 500, alto = 500;
+        int ancho = 800, alto = 600;
 
         setSize( ancho, alto );
         setTitle("Recorte de Lineas");
         setResizable( false );
-
         setLocationRelativeTo( null );
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setVisible( true );
@@ -30,19 +29,21 @@ public class RecorteLineas extends JFrame
     {
         RecorteLineas linea = new RecorteLineas();
        
-        linea.drawRectangle(35, 65, 400, 400,new Color(123, 36, 28 ));
-        linea.drawRectangle(35, 65, 400, 400,new Color(123, 36, 28 ));
-        linea.setArea(35, 65, 400, 400);
+        linea.drawRectangle(50, 50, 5, 10,new Color(238, 238, 238 ));
+        
+        // area delimitada
+        linea.drawRectangle(150, 150, 650, 450, new Color(0, 153, 0));
+        linea.setArea(150, 150, 650, 450);
 
-        linea.drawLine(20, 100, 200, 100, new Color(123, 36, 28));
-        linea.drawLine(400, 100, 250, 100, new Color(46, 134, 193));
-
-        linea.drawLine(125, 160, 125, 300, new Color(46, 134, 193));
-        linea.drawLine(320, 300, 320, 160, new Color(123, 36, 28));
-
-        linea.drawLine(50, 350, 150, 450, new Color(123, 36, 28));
-        linea.drawLine(300, 450, 400, 350, new Color(46, 134, 193));
-
+        //ejemplo horizontal
+        linea.drawLine(200, 100, 450, 100, new Color(0, 102, 204)); // linea fuera del area en y
+        linea.drawLine(200, 200, 450, 200, new Color(0, 102, 204));
+        //ejemplo vertical
+        linea.drawLine(125, 200, 125, 375, new Color(0, 102, 204)); //linea fuera del area en x
+        linea.drawLine(175, 200, 175, 375, new Color(0, 102, 204));
+        //ejemplo diagonal
+        linea.drawLine(50, 325, 150, 425, new Color(0, 102, 204)); // linea fuera del area en x
+        linea.drawLine(400, 425, 600, 325, new Color(0, 102, 204));
     }
     
     public void drawRectangle(int x1, int y1, int x2, int y2,  Color color) {

@@ -9,13 +9,11 @@ public class GrosorCirculo extends JFrame
 
     public GrosorCirculo()
     {
-        int ancho = 500, alto = 500;
+        int ancho = 800, alto = 600;
 
         setSize( ancho, alto );
-
         setTitle("Circulo grosor");
         setLocationRelativeTo( null );
-
         setDefaultCloseOperation( EXIT_ON_CLOSE );
         setVisible( true );
 
@@ -26,12 +24,10 @@ public class GrosorCirculo extends JFrame
     public static void main( String[] args)
     {
         GrosorCirculo circulo =  new GrosorCirculo();
-        circulo.drawCircle(250, 250, 100, 1, new Color(46, 134, 193));
-        circulo.drawCircle(250, 250, 100, 1, new Color(46, 134, 193));
-        circulo.drawCircle(250, 250, 150, 2, new Color(123, 36, 28 ));
-        circulo.drawCircle(250, 250, 115, 3, new Color(123, 36, 28 ));
-        circulo.drawCircle(250, 250, 200, 1, new Color(46, 134, 193));
-
+        circulo.drawCircle(400, 300, 50, 1, new Color(46, 134, 193));
+        circulo.drawCircle(400, 300, 80, 2, new Color(123, 36, 28 ));
+        circulo.drawCircle(400, 300, 170, 3, new Color(123, 36, 28 ));
+        circulo.drawCircle(400, 300, 200, 1, new Color(46, 134, 193));
     }
 
     public void drawCircle(int cx, int cy, int r, int ancho, Color color)
@@ -125,6 +121,4 @@ public class GrosorCirculo extends JFrame
         buffer.setRGB(0, 0, color.getRGB());
         this.getGraphics().drawImage(buffer, x, y, this);        
     }
-
-
 }

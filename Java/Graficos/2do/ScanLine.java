@@ -18,10 +18,10 @@ public class ScanLine extends JFrame implements MouseListener {
 
     private ScanLine() {
         Dimension pantalla= Toolkit.getDefaultToolkit().getScreenSize();
-        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation( EXIT_ON_CLOSE );
         this.setLocation((pantalla.width-500)/2, (pantalla.height-500)/2 );
         this.setTitle("Scan-Line");
-        this.setSize(500,300);
+        this.setSize(800,600);
         this.setVisible(true);
         ImgPixel = createImage(1, 1);
         graPixel  = ImgPixel.getGraphics();
@@ -169,13 +169,13 @@ public class ScanLine extends JFrame implements MouseListener {
         graPixel.setColor(Color.GREEN);
         rectang(x1b,y1b,e.getX(),e.getY()); 
         if(x1b>e.getX()&&y1b>e.getY())      
-            ScanLine(x1b,y1b,Color.RED);   
+            ScanLine(x1b,y1b,Color.BLACK);   
         else if(x1b>e.getX()&&y1b<e.getY())    
-            ScanLine(x1b,e.getY(),Color.BLUE);     
+            ScanLine(x1b,e.getY(),Color.RED);     
         else if(x1b<e.getX()&&y1b>e.getY())    
             ScanLine(e.getX(),y1b,Color.BLACK);     
         else if(x1b<e.getX()&&y1b<e.getY())     
-            ScanLine(e.getX(),e.getY(),Color.PINK);
+            ScanLine(e.getX(),e.getY(),Color.MAGENTA);
     }
     public void mouseEntered(MouseEvent e) {
         

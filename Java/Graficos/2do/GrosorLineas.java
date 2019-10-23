@@ -9,13 +9,11 @@ public class GrosorLineas extends JFrame
 
     public GrosorLineas()
     {
-        int ancho = 500, alto = 500;
+        int ancho = 800, alto = 600;
 
         setSize( ancho, alto );
-
         setTitle("Grosor Lineas");
         setLocationRelativeTo( null );
-
         setDefaultCloseOperation( EXIT_ON_CLOSE );
         setVisible( true );
 
@@ -26,16 +24,14 @@ public class GrosorLineas extends JFrame
     public static void main( String[] args)
     {
         GrosorLineas linea =  new GrosorLineas();
-        linea.drawLine(20, 100, 200, 100, 2, new Color(123, 36, 28));
-        linea.drawLine(20, 100, 200, 100, 2, new Color(123, 36, 28));
-        linea.drawLine(400, 100, 250, 100, 2, new Color(46, 134, 193));
+        linea.drawLine(55, 100, 200, 100, 3, new Color(0, 102, 204));
+        linea.drawLine(700, 100, 550, 100, 3, new Color(0, 153, 0));
 
-        linea.drawLine(125, 160, 125, 300, 2, new Color(46, 134, 193));
-        linea.drawLine(320, 300, 320, 160, 2, new Color(123, 36, 28));
+        linea.drawLine(115, 200, 115, 300, 1, new Color(0, 153, 0));
+        linea.drawLine(700, 300, 700, 200, 1, new Color(0, 153, 0));
 
-        linea.drawLine(50, 350, 150, 480, 2, new Color(123, 36, 28));
-        linea.drawLine(300, 480, 400, 350, 2, new Color(46, 134, 193));
-
+        linea.drawLine(50, 450, 150, 550, 5, new Color(0, 153, 0));
+        linea.drawLine(600, 550, 700, 450, 5, new Color(0, 102, 204));
     }
 
     public void drawLine (int x1, int y1, int x2, int y2, int grosor, Color color)
@@ -90,9 +86,6 @@ public class GrosorLineas extends JFrame
             y += yinc;
         }
     }
-
-
-
     private void putPixel(int x, int y, Color color)
     {
         buffer.setRGB(0, 0, color.getRGB());

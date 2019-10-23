@@ -11,7 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-public class Project2 extends JFrame implements Runnable {
+public class Animacion extends JFrame implements Runnable {
 
     private Image imgPixel;
     private Graphics graPixel;
@@ -32,7 +32,7 @@ public class Project2 extends JFrame implements Runnable {
     Point point1 = new Point();
     Point micirc = new Point();
     
-    public Project2(){ 
+    public Animacion(){ 
         this.setSize(width, height); 
         this.setVisible(true); 
         this.setLocationRelativeTo(null);
@@ -69,7 +69,7 @@ public class Project2 extends JFrame implements Runnable {
     
     
     public static void main(String[] args) {     
-        new Project2();
+        new Animacion();
     }
       
     
@@ -78,7 +78,6 @@ public class Project2 extends JFrame implements Runnable {
         trsX2 -= 10; 
         rotx += 5;
         roty += (rotx > 450) ? 1 : -1;
-        // System.out.println("Updating");
         update();
         buffer.getGraphics().fillRect(0, 0, width, height);
     }
@@ -273,10 +272,7 @@ public class Project2 extends JFrame implements Runnable {
 
         if(point1.x > buffer.getWidth() -10 )
         {
-
             trsX = 0;
-
-            System.out.println("Done 4");
             return;
         }
         else
@@ -345,7 +341,6 @@ public class Project2 extends JFrame implements Runnable {
         if(point0.x < 105 )
         {
             trsX2 = 0;
-            System.out.println("Done 4");
             return;
         }
         else{
@@ -436,20 +431,12 @@ public class Project2 extends JFrame implements Runnable {
         {
             rotx = 0;
             roty = 0;
-            System.out.println("Done 4");
             return;
         }
    
-
-        // System.out.println("X = " + rotx);
-        // System.out.println("y = " + roty);
-        // System.out.println(rotx);
         drawCircle(micirc.x, micirc.y, 55);
         floodFill(143 + xTras, 210   + yTras,"ORANGE");
-        
-  
     }
-    
     
     public  void floodFill(int x,int y, String fillColor)
     {
@@ -479,7 +466,6 @@ public class Project2 extends JFrame implements Runnable {
 
     public void  setCity()
     {
-    
         drawRectangle(100,400,250,300);
 
         drawRectangle(0, 400,100,230);
@@ -490,7 +476,6 @@ public class Project2 extends JFrame implements Runnable {
         drawRectangle(550,400,650,200);
         drawRectangle(650,400,750,250);
         drawRectangle(750,400,850,260);
-
         drawRectangle(850,400,990,220);
 
         floodFill(50,350,"BLACK");
@@ -501,15 +486,7 @@ public class Project2 extends JFrame implements Runnable {
         floodFill(560,350,"BLACK");
         floodFill(660,350,"BLACK");
         floodFill(760,350,"BLACK");
-
         floodFill(900,350,"BLACK");
-
-        drawDiscCircle(100, 50, 50);
-        drawDiscCircle(300, 100, 20);
-        drawDiscCircle(400, 150, 60);
-        drawDiscCircle(500, 70, 25);
-        drawDiscCircle(600, 100, 40);
-        drawDiscCircle(750, 50, 30);
 
     }
     
@@ -518,7 +495,6 @@ public class Project2 extends JFrame implements Runnable {
         if(x > buffer.getWidth() -10 )
         {
             // initAnimation();
-            System.out.println("Done 2");
         }
         else
         {
@@ -547,7 +523,6 @@ public class Project2 extends JFrame implements Runnable {
         if(x > buffer.getWidth() -10 ){
 
             // initAnimation();
-            System.out.println("Done 1");
         }
             
         else
