@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="styles/bootstrap4/bootstrap.min.css"
+  />
+  <link
+    href="plugins/font-awesome-4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="plugins/OwlCarousel2-2.2.1/owl.carousel.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="plugins/OwlCarousel2-2.2.1/animate.css"
+  />
+  <link
+    rel="stylesheet"
+    type="text/css"
+    href="plugins/jquery.mb.YTPlayer-3.1.12/jquery.mb.YTPlayer.css"
+  />
+  <link rel="stylesheet" type="text/css" href="styles/main_styles.css" />
+  <link rel="stylesheet" type="text/css" href="styles/responsive.css" />
+  <meta charset="UTF-8" />
+
+  <script>
+    //lectura de json, la ruta del json tiene que estar en linea o montada en la carpeta del localhost bryan
+    var request = new XMLHttpRequest();
+    request.open("GET", "reglas.json", false);
+    request.send();
+    var reglas = JSON.parse(request.responseText); //aqui se toma el objeto de las reglas y se pasa a javascript
+
+    //inicializacion de variables
+    var atribute = [];
+    var pos = 0;
+    for (var key in reglas) atribute.push(key);
+    var key = atribute[pos];
+    var prevkey = atribute[pos];
+    var quest = 0;
+    var sig = 100;
+    var finishProgram = false;
+    var validaFinal = false;
+    var validaInicial = false;
+    var whys = [];
+    var answers = [];
+
+    //funcion que construye las preguntas
+    function getKeyValue() {
+      var pregunta = reglas[key][quest];
+      document.getElementById("textQuestion").innerHTML =
+        "Su figura tiene " + pregunta;
+      whys.push(pregunta);
+    }
+
+    //funcion que valida respuesta
+    function getAnswer() {
+      var value = document.getElementById("question");
+      answers.push(value.checked ? "SI" : "NO");
+      validRules(value.checked);
+    }
+
+    //funcion principal
+    function validRules(answer) {
+      //antecedentes faltantes y actual
+      faltantes = reglas[key].length;
+      var actual = reglas[key].indexOf(reglas[key][quest]);
+
+      if (answer) {
+        //caso un solo antecedente
+        if ((faltantes == 1) & (actual == 0)) {
+          validaFinal = true;
+          validaInicial = true;
+        }
+        //caso ultimo antecedente
+        if (faltantes - actual == 1) {
+          validaFinal = true;
+        }
+        //caso antecedente inicial o intermedio
+        else {
+          validaInicial = true;
+          quest++;
+        }
+      }
+      // respuesta negativa
+      else {
+        if (quest != 0) {
+          prevkey = key;
+          // finishProgram = true; // activar esto hace que el motor se detenga cuando se meta a un arreglo de antecedentes, desactivarlo hace que se pase a la siguiente regla
+          var newKey = newValidRules(reglas[key][quest]);
+          key = newKey;
+          quest = 0;
+        } else {
+          prevkey = key;
+          var newKey = newValidRules(reglas[key][quest]);
+          key = newKey;
+          quest = 0;
+        }
+      }
+
+      //resetea pregunta y checkbox
+      var value = document.getElementById("question");
+      value.checked = false;
+
+      // termino de evaluar positivamente
+      if (validaFinal && validaInicial) {
+        figuraEncontrada(key);
+        write_porques(porque("Si", key));
+      }
+      // termino de evaluar negativamente
+      else if ((finishProgram && validaInicial) || reglas[key] == undefined) {
+        noEncontrada(prevkey);
+        write_porques(porque("No", prevkey));
+      }
+      //pasa a la siguiente pregunta
+      else {
+        getKeyValue();
+      }
+    }
+    //redefine las reglas
+    function newValidRules(statement) {
+      for (var key in reglas) {
+        for (var item in reglas[key][quest]) {
+          if (reglas[key][quest] == statement) {
+            var currentType = key;
+            delete reglas[currentType];
+            break;
+          }
+        }
+      }
+      atribute = [];
+      for (var key in reglas) atribute.push(key);
+      key = atribute[pos];
+      return key;
+    }
+
+    function porque(Si_No, nomFig) {
+      var mensajes_porque = [];
+      for (let w = 0; w < whys.length; w++) {
+        mensajes_porque.push(
+          "<br>" +
+            Si_No +
+            " es " +
+            nomFig +
+            ", debido a que " +
+            answers[w] +
+            " tiene " +
+            whys[w]
+        );
+      }
+      return mensajes_porque;
+    }
+
+    function figuraEncontrada(key) {
+      document.getElementById("textQuestion").innerHTML =
+        "Su figura es un  " + key;
+      document.getElementById("question").style.display = "none";
+      document.getElementById("submit").style.display = "none";
+    }
+    function noEncontrada(key) {
+      document.getElementById("textQuestion").innerHTML =
+        "Su figura no fue encontrada";
+      document.getElementById("question").style.display = "none";
+      document.getElementById("submit").style.display = "none";
+    }
+    function write_porques(porque) {
+      document.getElementById("whys").innerHTML = porque;
+      document.getElementById("reload").innerHTML =
+        "Por favor recargue la pagina para continuar";
+    }
+  </script>
+  <head>
+    <title>Sistema Experto- Verificacion de Figuras</title>
+  </head>
+
+  <body
+    style="background-image:url('./images/post_18.jpg'); background-repeat: no-repeat; height: 100%; background-size: cover;"
+  >
+    <div class="container text-white">
+      <h2>Identificación de Figuras</h2>
+    </div>
+    <div
+      class="header_content d-flex flex-row align-items-center justify-content-start text-white"
+    >
+      <div>
+        <h4>Usted considera que :</h4>
+        <h3 id="textQuestion">
+          Su figura tiene
+          <script>
+            getKeyValue();</script
+          >?
+        </h3>
+      </div>
+    </div>
+
+    <label><input type="checkbox" id="question"/></label>
+    <button
+      onclick="getAnswer()"
+      id="submit"
+      type="“next-question”"
+      class="“btn"
+      btn-default”
+    >
+      Enviar
+    </button>
+
+    <div
+      class="header_content d-flex flex-row align-items-center justify-content-start text-white"
+    >
+      <br />
+      <br /><br />
+      <h4 id="whys"></h4>
+    </div>
+    <h5 id="reload"></h5>
+  </body>
+</html>
