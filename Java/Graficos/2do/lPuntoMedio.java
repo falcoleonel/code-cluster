@@ -28,7 +28,7 @@ public class lPuntoMedio extends JFrame {
         puntoMedio.drawLine(700, 300, 700, 200, new Color(0, 153, 0));
 
         puntoMedio.drawLine(50, 450, 150, 550, new Color(0, 153, 0));
-        puntoMedio.drawLine(600, 550, 700, 450, new Color(0, 102, 204));
+        j.drawLine(600, 550, 700, 450, new Color(0, 102, 204));
 
     }
 
