@@ -36,7 +36,7 @@ for k = 1:255
     % de las clases.
     sigma=w0*w1*((u1-u0)^2); % Este es el complemento de la varianza de las clases
     varia(k)= sigma;
-    if sigma >= max; 
+    if sigma > max; 
         max=sigma; 
         % el punto de segmentacion se da por la maxima varianza entre las
         % clases
@@ -44,23 +44,21 @@ for k = 1:255
     end
 end
 
-
-
-%Muestra el histograma con el umbral resaltado
-figure(2),imhist(gris); 
-hold on;
-line([umbral, umbral], ylim, 'LineWidth', 2 ,'Color',[0.4 0.1 0.5]);
-
-%Muestra Grafica de varianza
-figure(3),plot(varia);
-hold on;
-line([umbral, umbral], ylim, 'LineWidth', 2 ,'Color',[0.4 0.1 0.5]);
-%Muestra resultado en imagen binaria
-imgsegmentada=im2bw(gris,umbral/255); 
-figure(4),imshow(imgsegmentada); 
-
 % Metodo de matlab
 % level = graythresh(I);
 % otsuML = im2bw(level);
 % figure(5),imshow(bw);
+
+%Muestra el histograma con el umbral resaltado
+figure(2),imhist(gris); 
+hold on;
+line([118, 118], ylim, 'LineWidth', 2 ,'Color',[0.4 0.1 0.5]);
+
+%Muestra Grafica de varianza
+figure(3),plot(varia*-1);
+
+%Muestra resultado en imagen binaria
+imgsegmentada=im2bw(gris,umbral/255); 
+figure(4),imshow(imgsegmentada); 
+
 
