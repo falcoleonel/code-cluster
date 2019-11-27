@@ -5,64 +5,51 @@ gris=double(grey);
 
 [M,N]=size(gris);
 
-dx=zeros(M,N);
-dy=zeros(M,N);
-v=zeros(M,N);
-vN=zeros(M,N);
+%filtros prewitt
+px=[-1, 0, 1; 
+    -1, 0, 1; 
+    -1, 0, 1];
 
+py=[-1, -1, -1; 
+     0, 0, 0; 
+     1,1, 1];
+
+dx=conv2(gris,px);
+dy=conv2(gris,py);
+
+%gradiente total
 for x=1:M
     for y=1:N
-        if(x==1||x==M)
-            dx(x,y)=gris(x,y);
-        else
-            dx(x,y)=(gris(x+1,y)-gris(x-1,y))*0.5;
-        end
+        v(x,y)=sqrt((dx(x,y)^2)+(dy(x,y)^2));
     end
 end
 
-for x=1:M
-    for y=1:N
-        if(y==1||y==N)
-            dy(x,y)=gris(x,y);
-        else
-            dy(x,y)=(gris(x,y+1)-gris(x,y-1))*0.5;
-        end
-    end
-end
+%valor maximo
+maxi=max(v);
+maxVal=max(maxi);
 
-prewittdx=[-1, 0, 1; -1, 0, 1; -1, 0, 1];
-prewittdy=[-1, -1, -1; 0, 0, 0; 1, 1, 1];
-
-cdx=conv(dx,prewittdx);
-cdy=conv(dy,prewittdy);
-
-for x=1:M
-    for y=1:N
-        v(x,y)=sqrt((cdx(x,y)^2)+(cdy(x,y)^2));
-    end
-end
-
-mr=max(v);
-maxVal=max(mr);
-
+%gradiente total normalizado
 for x=1:M
     for y=1:N
         vN(x,y)=(v(x,y)/maxVal)*255;
     end
 end
 
+%calculo de umbral con otsu
 level=graythresh(uint8(vN));
-borde = imbinarize(uint8(vN),level);
+
+%resultado final
+borde = im2bw(uint8(vN),.25);
 
 
 figure('Name','Original gris')
 imshow(grey);
 
 figure('Name','dx')
-imshow(cdx);
+imshow(uint8(dx));
 
 figure('Name','dy')
-imshow(cdy);
+imshow(uint8(dy));
 
 figure('Name','Bordes')
 imshow(borde);
