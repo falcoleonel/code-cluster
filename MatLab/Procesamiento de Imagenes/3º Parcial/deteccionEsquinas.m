@@ -8,11 +8,11 @@ fBox=imboxfilt(gris);
 
 prewittdx=[-1, 0, 1; 
     -1, 0, 1; 
-    -1, 0, 1];
+    -1, 0, 1]/2;
 
 prewittdy=[-1, -1, -1; 
     0, 0, 0; 
-    1, 1, 1];
+    1, 1, 1]/2;
 
 %gradientes
 Ix=conv2(fBox,prewittdx);
@@ -37,7 +37,7 @@ A=conv2(HEx,matriz);
 B=conv2(HEy,matriz);
 C=conv2(HEz,matriz);
 
-%gradiente total
+%gradiente
 for x=1:M
     for y=1:N
         v(x,y)=(A(x,y)*B(x,y)-(C(x,y)^2))-(0.1*(A(x,y)+B(x,y))^2);
@@ -53,11 +53,24 @@ for x=1:M
     end
 end
 
-%maximizada
-R=imdilate(v,true(5));
+dif=2;
+R=[];
+for x=1+dif:M-dif
+    for y=1+dif:N-dif
+        act=v(x,y);
+        valores=v(x-dif:x+dif, y-dif:y+dif);
+        Mx=max(valores(:));
+        if(act>0 && act == Mx)
+            R=[R; y x];
+        end
+    end
+end
 
-R = uint8(R);
-v = uint8(v);
+%calcular el maximo central vecindad de 5
+%maximizada
+%R=imdilate(v,true(5));
+%R = uint8(R);
+
 
 figure('Name','Gris')
 imshow(I);
@@ -68,10 +81,15 @@ imshow(uint8(Ix));
 figure('Name','Iy')
 imshow(uint8(Iy));
 
-figure('Name','Gradiente')
+figure('Name','')
 imshow(v);
 
-figure('Name','Resultado')
-imshow(R);
+figure('Name','Gris')
+imshow(I);
+[RM,RN] = size(R);
+for i=1:RM
+    hold on;
+    plot(R(i,1),R(i,2),'+', 'MarkerSize',15);
+end
 
 end

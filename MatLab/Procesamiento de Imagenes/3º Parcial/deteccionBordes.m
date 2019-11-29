@@ -41,7 +41,6 @@ level=graythresh(uint8(vN));
 %resultado final
 borde = im2bw(uint8(vN),.25);
 
-
 figure('Name','Original gris')
 imshow(grey);
 
