@@ -20,7 +20,6 @@ public class PCilindro extends JFrame implements KeyListener{
     }
 	
 	public PCilindro(){
-		//boolean T, S, R;
 		
         setTitle("Cilindro");
 		setSize(600, 600);

@@ -10,7 +10,7 @@ public class PEscala extends JFrame implements KeyListener {
 	Pixel pixel;
 	Scale scaleV, growthV;
 	
-	public static void main(String[] args) {
+	public static void main (String[] args) {
         new PEscala();
     }
 	
@@ -52,14 +52,14 @@ public class PEscala extends JFrame implements KeyListener {
 			growthV = Scale.doScale(growthV, new Scale(0, 5, 0));
 		}
 		
-		if(evt.getKeyChar() == '-' ) {
+		if(evt.getKeyChar() == 'z' ) {
 			growthV = Scale.doScale(growthV, new Scale(0, 0, 5));
 		}
 		
-		if(evt.getKeyChar() == '+') {
+		if(evt.getKeyChar() == 'x') {
 			growthV = Scale.doScale(growthV, new Scale(0, 0, -5));
 		}
-		if(evt.getKeyChar() == 'r' || evt.getKeyChar() == 'R') {
+		if(evt.getKeyChar() == 'c') {
 			Scale.reset(scaleV);
 			Scale.resetDistPoint(growthV);
 		}

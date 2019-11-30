@@ -26,9 +26,6 @@ public class Cylinder {
 		inc = Math.PI / 8; 
 		scl = size;
 
-		//x=(2 + cos(t)) cos(A)
-		//z = (2 + cos(t)) sen(A)
-		//y = t
 
 		for(t = 0; t<=(2 * Math.PI); t+=inc) {
 			ArrayList<Cylinder> temp = new ArrayList<Cylinder>();
@@ -65,12 +62,12 @@ public class Cylinder {
 		for(int index = 0; index < temPoints.size(); index++) {
 			for(int index2 = 1; index2 < temPoints.get(index).size(); index2++) {
 				//Circulo
-				Line.drawLine(temPoints.get(index).get(index2).x ,temPoints.get(index).get(index2).y ,temPoints.get(index).get(index2 - 1).x, temPoints.get(index).get(index2 - 1).y, new Color(46, 134, 193));
+				Line.drawLine(temPoints.get(index).get(index2).x ,temPoints.get(index).get(index2).y ,temPoints.get(index).get(index2 - 1).x, temPoints.get(index).get(index2 - 1).y, new Color(152, 37, 164));
 				if(index > 0) {
-					Line.drawLine(temPoints.get(index).get(index2).x ,temPoints.get(index).get(index2).y ,temPoints.get(index - 1).get(index2).x,temPoints.get(index - 1).get(index2).y, new Color(46, 134, 193));
+					Line.drawLine(temPoints.get(index).get(index2).x ,temPoints.get(index).get(index2).y ,temPoints.get(index - 1).get(index2).x,temPoints.get(index - 1).get(index2).y, new Color(152, 37, 164));
 				}
 			}
-			Line.drawLine(temPoints.get(index).get(temPoints.get(index).size() - 1).x,temPoints.get(index).get(temPoints.get(index).size() - 1).y,temPoints.get(index).get(0).x,temPoints.get(index).get(0).y, new Color(46, 134, 193));
+			Line.drawLine(temPoints.get(index).get(temPoints.get(index).size() - 1).x,temPoints.get(index).get(temPoints.get(index).size() - 1).y,temPoints.get(index).get(0).x,temPoints.get(index).get(0).y, new Color(152, 37, 164));
 		}	
 	}
 

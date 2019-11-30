@@ -20,8 +20,6 @@ public class Rotation {
 		point.y = 40;
 		point.z = 40;
 	}
-		// x' = x cos(A) - ysin(A)
-		// y' = x sin(A) + ycos(A)
 
 	public static ArrayList<Rotation> doRotationX(ArrayList<Rotation> points, double degree) {
 		

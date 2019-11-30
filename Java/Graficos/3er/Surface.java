@@ -112,11 +112,11 @@ public class Surface {
 		
 		for(int index = 1; index <= tempDeep.size(); index++) {
 			if(limit % 4 == 0) {
-				Line.drawLine(tempDeep.get(index - 1).x, tempDeep.get(index - 1).y, tempDeep.get(index - 4).x, tempDeep.get(index - 4).y, new Color(234, 100, 76));
+				Line.drawLine(tempDeep.get(index - 1).x, tempDeep.get(index - 1).y, tempDeep.get(index - 4).x, tempDeep.get(index - 4).y, new Color(52, 37, 164));
 				limit = 1;
 			}
 			else {
-				Line.drawLine(tempDeep.get(index - 1).x, tempDeep.get(index - 1).y, tempDeep.get(index).x, tempDeep.get(index).y, new Color(234, 100, 76));
+				Line.drawLine(tempDeep.get(index - 1).x, tempDeep.get(index - 1).y, tempDeep.get(index).x, tempDeep.get(index).y, new Color(52, 37, 164));
 				limit++;
 			}
 		}

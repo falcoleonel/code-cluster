@@ -31,9 +31,6 @@ public class PSuperficie extends JFrame implements KeyListener  {
 		buffer = new BufferedImage(this.getWidth(), this.getHeight(), BufferedImage.TYPE_INT_ARGB);
 		pixel = new Pixel(this, buffer);
 
-		// rotationV = new Surface(0, 0, 0);
-		// degrees = new Surface(0.0, 0.0, 0.0);
-
 		surfaceOriginal = Surface.getSurfacePoints(new Surface(0, 0, 0), new Surface(260, 0, 250), 10);
 		surface = Surface.getSurfacePoints(new Surface(0, 0, 0), new Surface(260, 0, 250), 10);
 		setVisible(true);
@@ -44,22 +41,6 @@ public class PSuperficie extends JFrame implements KeyListener  {
     public void keyTyped(KeyEvent e) { }
     public void keyReleased(KeyEvent e) { }
     public void keyPressed(KeyEvent evt) {
-		// surface = Surface.do3DRotation(surfaceOriginal, degrees);
-
-		// if(evt.getKeyCode() == KeyEvent.VK_RIGHT) degrees._z += 10;
-		
-		// if(evt.getKeyCode() == KeyEvent.VK_LEFT) degrees._x += 10;
-		
-		// if(evt.getKeyCode() == KeyEvent.VK_DOWN) degrees._y += 10;
-
-		// if(evt.getKeyCode() == KeyEvent.VK_UP) degrees._y -= 10;
-		// if(evt.getKeyCode() == KeyEvent.VK_RIGHT) x+=5;
-		
-		// if(evt.getKeyCode() == KeyEvent.VK_LEFT) x-=5;
-		
-		// if(evt.getKeyCode() == KeyEvent.VK_UP) z-=5;
-		
-		// if(evt.getKeyCode() == KeyEvent.VK_DOWN) z+=5;
 
 		if(evt.getKeyCode() == KeyEvent.VK_RIGHT) {
 			degrees -=10;
@@ -81,21 +62,15 @@ public class PSuperficie extends JFrame implements KeyListener  {
 			surface = Surface.doRotationX(surfaceOriginal, degrees);
 		}
 		
-		if(evt.getKeyChar() == '-' ) {
+		if(evt.getKeyChar() == 'z' ) {
 			degrees-=10;
 			surface = Surface.doRotationZ(surfaceOriginal, degrees);
 		}
 		
-		if(evt.getKeyChar() == '+') {
+		if(evt.getKeyChar() == 'x') {
 			degrees+=10;
 			surface = Surface.doRotationZ(surfaceOriginal, degrees);
 		}
-		// if(evt.getKeyChar() == 'r' || evt.getKeyChar() == 'R') {
-		// 	Surface.reset(RotationV);
-		// 	surface = Cube.getPoints(RotationV, growthV);
-		// 	degrees = 0;
-		// }
-
 
 		repaint();
     }

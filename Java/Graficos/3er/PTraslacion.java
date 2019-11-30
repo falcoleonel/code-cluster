@@ -15,7 +15,7 @@ public class PTraslacion extends JFrame implements KeyListener {
     }
 	
 	public PTraslacion(){
-        setTitle("Transalacion 3D");
+        setTitle("Translacion 3D");
 		setSize(600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable( false );
@@ -50,14 +50,14 @@ public class PTraslacion extends JFrame implements KeyListener {
 			translationV = Translation.traslacion(translationV, new Translation(0, 5, 0));
 		}
 		
-		if(evt.getKeyChar() == '-' ) {
+		if(evt.getKeyChar() == 'z' ) {
 			translationV = Translation.traslacion(translationV, new Translation(0, 0, 5));
 		}
 		
-		if(evt.getKeyChar() == '+') {
+		if(evt.getKeyChar() == 'x') {
 			translationV = Translation.traslacion(translationV, new Translation(0, 0, -5));
 		}
-		if(evt.getKeyChar() == 'r' || evt.getKeyChar() == 'R') {
+		if(evt.getKeyChar() == 'c') {
 			Translation.reset(translationV);
 		}
 

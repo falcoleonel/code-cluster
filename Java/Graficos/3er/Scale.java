@@ -20,12 +20,6 @@ public class Scale {
 		point.y = 40;
 		point.z = 40;
 	}
-	// public static Scale traslacion(Scale point, Scale movement) {
-	// 	point.x += movement.x;
-	// 	point.y += movement.y;
-	// 	point.z += movement.z;
-	// 	return point;
-	// }
 	public static Scale doScale(Scale point, Scale growth) {
 		point.x += growth.x;
 		point.y += growth.y;

@@ -21,15 +21,12 @@ public class PPerspectiva extends JFrame {
 		pixel = new Pixel(this, buffer);
 		
 		setVisible(true);
-	
     }
-	
 	
 	public void paint(Graphics g){
 		Pixel.clear();
 
-		CubePerspectiva.drawCube(30, 0, 30, 60);
-		// Cube.drawCube(100, 200, 10, 150);
+		CubePerspectiva.drawCube(0, 0, 25, 60);
 		g.drawImage(buffer, 0, 0, this);
 		repaint();
 		

@@ -24,11 +24,10 @@ public class PParalela extends JFrame {
 	
     }
 	
-	
 	public void paint(Graphics g){
 		Pixel.clear();
 
-		CubeParalela.drawCube(0, 0, 0, 200);
+		CubeParalela.drawCube(0, 0, 0, 230);
 		g.drawImage(buffer, 0, 0, this);
 		repaint();
 		

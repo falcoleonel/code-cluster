@@ -33,18 +33,16 @@ public class CubeParalela {
 			
 			x = tempX + (xp * ((z - z1) / zp));
 
-			// Pixel.height - ecuacion -->Derecha
 			y = Pixel.height - (tempY + (yp * ((z - z1) / zp)));
 			
 			pointsX1.add((int)x); pointsY1.add((int)y);
-			// System.out.println(x + " - " + y);
 		}
 
 		// Cara frontal 
 		for(int index = 0; index < arrX.length; index++) {
 			double tempX, tempY, tempZ; 
-			
-			tempZ = z1 + large; //Proyeccion 
+			//Proyeccion 
+			tempZ = z1 + large; 
 			tempX = x1 + (arrX[index] * large);
 			tempY = y1 + (arrY[index] * large);
 			
@@ -56,9 +54,12 @@ public class CubeParalela {
 
 		for(int index = 1; index < pointsX1.size(); index++) {
 
-			Line.drawLine(pointsX1.get(index - 1), pointsY1.get(index - 1), pointsX1.get(index), pointsY1.get(index), new Color(255,31,85)); //1er cara
-			Line.drawLine(pointsX2.get(index - 1), pointsY2.get(index - 1), pointsX2.get(index), pointsY2.get(index), new Color(255,31,85)); //2do cara
-			Line.drawLine(pointsX1.get(index - 1), pointsY1.get(index - 1), pointsX2.get(index - 1), pointsY2.get(index - 1), new Color(152, 37, 164)); //Aristas
+			// primera cara
+			Line.drawLine(pointsX1.get(index - 1), pointsY1.get(index - 1), pointsX1.get(index), pointsY1.get(index), new Color(52, 37, 164)); 
+			// segunda cara
+			Line.drawLine(pointsX2.get(index - 1), pointsY2.get(index - 1), pointsX2.get(index), pointsY2.get(index), new Color(52, 37, 164));
+			// Aristas 
+			Line.drawLine(pointsX1.get(index - 1), pointsY1.get(index - 1), pointsX2.get(index - 1), pointsY2.get(index - 1), new Color(152, 37, 164)); 
 		}
 	}
 	

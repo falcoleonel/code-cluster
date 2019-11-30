@@ -4,7 +4,6 @@ import java.util.*;
 
 public class Line {
 	//Punto Medio
-	
     public static void drawLine(int x0, int y0, int x1, int y1, Color color) {
 		int x, y;
         int dx, dy, A, B, pk;

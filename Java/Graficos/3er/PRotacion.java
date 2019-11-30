@@ -65,16 +65,16 @@ public class PRotacion extends JFrame implements KeyListener {
 			drawingCube = Rotation.doRotationX(originalCube, degrees);
 		}
 		
-		if(evt.getKeyChar() == '-' ) {
+		if(evt.getKeyChar() == 'z' ) {
 			degrees-=10;
 			drawingCube = Rotation.doRotationZ(originalCube, degrees);
 		}
 		
-		if(evt.getKeyChar() == '+') {
+		if(evt.getKeyChar() == 'x') {
 			degrees+=10;
 			drawingCube = Rotation.doRotationZ(originalCube, degrees);
 		}
-		if(evt.getKeyChar() == 'r' || evt.getKeyChar() == 'R') {
+		if(evt.getKeyChar() == 'c') {
 			Rotation.reset(RotationV);
 			drawingCube = CubeR.getPoints(RotationV, growthV);
 			degrees = 0;

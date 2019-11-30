@@ -19,13 +19,13 @@ public class CubeR {
 		
 		for(int index = 0; index < (tempPoints.size() / 2) - 1; index++) {
 
-			Line.drawLine(tempPoints.get(index).x, tempPoints.get(index).y, tempPoints.get(index + 1).x, tempPoints.get(index + 1).y, new Color(46, 134, 193)); 
-			Line.drawLine(tempPoints.get(index + 4).x, tempPoints.get(index + 4).y, tempPoints.get(index + 5).x, tempPoints.get(index + 5).y, new Color(46, 134, 193)); 
-			Line.drawLine(tempPoints.get(index).x, tempPoints.get(index).y, tempPoints.get(index + 4).x, tempPoints.get(index + 4).y, new Color(46, 134, 193)); 
+			Line.drawLine(tempPoints.get(index).x, tempPoints.get(index).y, tempPoints.get(index + 1).x, tempPoints.get(index + 1).y, new Color(52, 37, 164)); 
+			Line.drawLine(tempPoints.get(index + 4).x, tempPoints.get(index + 4).y, tempPoints.get(index + 5).x, tempPoints.get(index + 5).y, new Color(52, 37, 164)); 
+			Line.drawLine(tempPoints.get(index).x, tempPoints.get(index).y, tempPoints.get(index + 4).x, tempPoints.get(index + 4).y, new Color(152, 37, 164)); 
 		}
-		Line.drawLine(tempPoints.get(3).x, tempPoints.get(3).y, tempPoints.get(0).x, tempPoints.get(0).y, new Color(46, 134, 193)); 
-		Line.drawLine(tempPoints.get(7).x, tempPoints.get(7).y, tempPoints.get(4).x, tempPoints.get(4).y, new Color(46, 134, 193)); 
-		Line.drawLine(tempPoints.get(3).x, tempPoints.get(3).y, tempPoints.get(7).x, tempPoints.get(7).y, new Color(46, 134, 193)); 
+		Line.drawLine(tempPoints.get(3).x, tempPoints.get(3).y, tempPoints.get(0).x, tempPoints.get(0).y, new Color(152, 37, 164)); 
+		Line.drawLine(tempPoints.get(7).x, tempPoints.get(7).y, tempPoints.get(4).x, tempPoints.get(4).y, new Color(152, 37, 164)); 
+		Line.drawLine(tempPoints.get(3).x, tempPoints.get(3).y, tempPoints.get(7).x, tempPoints.get(7).y, new Color(152, 37, 164)); 
 	
 
 	}
@@ -35,7 +35,8 @@ public class CubeR {
 		ArrayList<Rotation> points = new ArrayList<Rotation>();
 		int[] arrX = {0, 1, 1, 0};
 		int[] arrY = {0, 0, 1, 1};
-		int x, y; int z = 0; //Rotación sobre su propio eje
+		//Rotacion sobre su propio eje
+		int x, y; int z = 0; 
 		
 		for(int index = 0; index < arrX.length; index++) {
 			

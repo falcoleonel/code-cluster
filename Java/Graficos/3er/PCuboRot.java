@@ -16,7 +16,7 @@ public class PCuboRot extends JFrame  {
     }
 	
 	public PCuboRot(){
-        setTitle("Rotacion Cubo");
+        setTitle("Rotacion Cubo Autonoma");
 		setSize(600, 600);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setResizable( false );
