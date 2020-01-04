@@ -1,0 +1,6 @@
+grant {
+	permission java.security.AllPermission;
+	permission java.net.SocketPermission "172.20.10.2:1234",
+		"connect,resolve";
+	permission java.lang.RuntimePermission "setFactory";
+};
