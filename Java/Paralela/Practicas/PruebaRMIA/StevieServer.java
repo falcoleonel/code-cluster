@@ -13,7 +13,7 @@ public class StevieServer extends Activatable implements StevieAut {
 	}
 
 	public void sweepPick() throws RemoteException {
-		System.out.println("Error ):");
+		System.out.println("Hola desde RMIA");
 	}
 
 	public static void main(String[] args) throws Exception {
@@ -30,10 +30,10 @@ public class StevieServer extends Activatable implements StevieAut {
 
 			MarshalledObject m = null;
 
-			ActivationDesc desc = new ActivationDesc(agi, "StevieServer", "file:///home/samuel/Documents/Proyectos/Java/PriemaRMIA/", m);
+			ActivationDesc desc = new ActivationDesc(agi, "StevieServer", "file:///c/Users/danvc/Code-Cluster/Java/Paralela/Practicas/PruebaRMIA", m);
 			StevieAut s = (StevieAut) Activatable.register(desc);
 
-			Naming.rebind("//" + "172.20.10.10" + ":1234/StevieT", s);
+			Naming.rebind("//" + InetAddress.getLocalHost().getHostAddress() + ":"+args[0]+"/StevieT", s);
 			System.out.println("Encendido");
 		} catch (Exception e) {
 			e.printStackTrace();
