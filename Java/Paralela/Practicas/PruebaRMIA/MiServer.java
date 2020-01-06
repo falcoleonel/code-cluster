@@ -3,8 +3,8 @@ import java.rmi.activation.*;
 import java.util.Properties;
 import java.net.InetAddress;
 
-public class StevieServer extends Activatable implements StevieAut {
-	public StevieServer(ActivationID a, MarshalledObject m) throws RemoteException {
+public class MiServer extends Activatable implements ServerAut {
+	public MiServer(ActivationID a, MarshalledObject m) throws RemoteException {
 		super(a, 0);
 	}
 
@@ -30,8 +30,8 @@ public class StevieServer extends Activatable implements StevieAut {
 
 			MarshalledObject m = null;
 
-			ActivationDesc desc = new ActivationDesc(agi, "StevieServer", "file:///c/Users/danvc/Code-Cluster/Java/Paralela/Practicas/PruebaRMIA", m);
-			StevieAut s = (StevieAut) Activatable.register(desc);
+			ActivationDesc desc = new ActivationDesc(agi, "MiServer", "file:///c/Users/danvc/Code-Cluster/Java/Paralela/Practicas/PruebaRMIA", m);
+			ServerAut s = (ServerAut) Activatable.register(desc);
 
 			Naming.rebind("//" + InetAddress.getLocalHost().getHostAddress() + ":"+args[0]+"/StevieT", s);
 			System.out.println("Encendido");

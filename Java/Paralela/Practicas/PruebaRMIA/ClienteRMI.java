@@ -6,7 +6,7 @@ public class ClienteRMI {
         
         try {
 
-           StevieAut x = (StevieAut)Naming.lookup("//" + args[0] + ":1234/StevieT");
+          ServerAut x = (ServerAut)Naming.lookup("//" + args[0] + ":1234/StevieT");
 
             System.out.println("Conectado");
             for(int i = 0; i < x.getSweeps(); i++)
@@ -16,4 +16,3 @@ public class ClienteRMI {
         } catch(Exception ex) { ex.printStackTrace(); }
     }
 }
-
