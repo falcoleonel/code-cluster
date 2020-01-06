@@ -1,5 +1,4 @@
 
-
 public class Productor extends Proceso<String> {
     
     FrmProductorConsumidor almacen;
@@ -20,7 +19,7 @@ public class Productor extends Proceso<String> {
         try {
             while(true) {
                 
-                info = "Descanzando";
+                info = "Descansando";
                 almacen.ActualizarTabla(true);
                 comprobarPausa();
                 // Trabajar
@@ -40,7 +39,7 @@ public class Productor extends Proceso<String> {
                     
                     info = "Almacenando";
                     almacen.ActualizarTabla(true);
-                    almacen.ocupados.add("Pack");
+                    almacen.ocupados.add("Paquete");
                     almacen.ActualizarProductos();
                     Thread.sleep(tiempoDentro);
                     almacen.almacenVacio.signal();
