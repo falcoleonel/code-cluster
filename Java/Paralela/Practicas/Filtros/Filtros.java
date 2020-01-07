@@ -189,7 +189,7 @@ public class Filtros extends UnicastRemoteObject implements FiltrosCliente {
             ImageIO.write(matrizAImagen(salida), "png", new File("bordesConc.png"));
             salida = new int[h][w];
 
-            String dirServer = JOptionPane.showInputDialog(null, "Escriba la dirección del server:", "192.168.0.7:1234");
+            String dirServer = JOptionPane.showInputDialog(null, "Escriba la direccion del server:", "192.168.0.7:1234");
             FiltrosInterfaz server = (FiltrosInterfaz)Naming.lookup("//" + dirServer + "/filtros");
             Filtros cliente = new Filtros();
             server.registrarCliente(cliente);
@@ -205,4 +205,3 @@ public class Filtros extends UnicastRemoteObject implements FiltrosCliente {
         } catch(Exception ex) { }
     }
 }
-
