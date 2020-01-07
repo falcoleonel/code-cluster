@@ -6,18 +6,13 @@ import java.util.function.Consumer;
 
 public class ChatClienteChido extends UnicastRemoteObject implements ChatCliente {
 
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     public String nombre;
     public ChatServer server;
     public Consumer<String> consola;
 
-
-
     @Override
-    public void ping() throws RemoteException { }
+    public void verificaConexion() throws RemoteException { }
 
     @Override
     public void enviarMensaje(String nombre, String mensaje) throws RemoteException {
@@ -25,8 +20,6 @@ public class ChatClienteChido extends UnicastRemoteObject implements ChatCliente
         if(consola != null) consola.accept(salida);
         else System.out.println(salida);
     }
-
-
 
     public ChatClienteChido() throws RemoteException { }
 

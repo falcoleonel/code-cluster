@@ -40,13 +40,14 @@ public class ChatServerChido extends UnicastRemoteObject implements ChatServer {
     }
 
     @Override
+    //funcionalidad destinatario
     public void enviarMensaje(String nombre, String mensaje, String destinatario) throws RemoteException {
         synchronized(clientes) {
             clientes.forEach((n, c) -> {
                 if(destinatario == null || destinatario.isEmpty() || destinatario.equals(n)) try {
                     c.enviarMensaje(nombre, mensaje);
                 } catch(RemoteException ex) {
-                    String mensajeC = "No se ha alcanzado a " + nombre + ", tal vez murió.";
+                    String mensajeC = "No se ha alcanzado a " + nombre;
                     if(consola != null) consola.accept(mensajeC);
                     else System.out.println(mensajeC);
                 }
@@ -69,7 +70,7 @@ public class ChatServerChido extends UnicastRemoteObject implements ChatServer {
                 Thread.sleep(2000);
                 for(Map.Entry<String, ChatCliente> cliente : clientes.entrySet()) {
                     try {
-                        cliente.getValue().ping();
+                        cliente.getValue().verificaConexion();
                     } catch(RemoteException ex) {
                         muertos.put(cliente.getKey(), cliente.getValue());
                     }
@@ -88,8 +89,6 @@ public class ChatServerChido extends UnicastRemoteObject implements ChatServer {
         }
     }
 
-
-
     public static void main(String[] args) {
         try {
 
@@ -106,4 +105,3 @@ public class ChatServerChido extends UnicastRemoteObject implements ChatServer {
         }
     }
 }
-
