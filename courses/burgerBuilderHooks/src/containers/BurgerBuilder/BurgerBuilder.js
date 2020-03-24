@@ -1,15 +1,14 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { connect, useDispatch, useSelector } from 'react-redux';
+import React, { useState, useEffect, useCallback, Fragment } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-import Aux from '../../hoc/Aux/Aux';
-import Burger from '../../components/Burger/Burger';
-import BuildControls from '../../components/Burger/BuildControls/BuildControls';
-import Modal from '../../components/UI/Modal/Modal';
-import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
-import Spinner from '../../components/UI/Spinner/Spinner';
-import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler';
-import * as actions from '../../store/actions/index';
-import axios from '../../axios-orders';
+import Burger from "../../components/Burger/Burger";
+import BuildControls from "../../components/Burger/BuildControls/BuildControls";
+import Modal from "../../components/UI/Modal/Modal";
+import OrderSummary from "../../components/Burger/OrderSummary/OrderSummary";
+import Spinner from "../../components/UI/Spinner/Spinner";
+import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
+import * as actions from "../../store/actions/index";
+import axios from "../../axios-orders";
 
 const burgerBuilder = props => {
   // constructor(props) {
@@ -57,8 +56,8 @@ const burgerBuilder = props => {
     if (isAuthenticated) {
       setPurchasing(true);
     } else {
-      onSetAuthRedirectPath('/checkout');
-      props.history.push('/auth');
+      onSetAuthRedirectPath("/checkout");
+      props.history.push("/auth");
     }
   };
 
@@ -68,7 +67,7 @@ const burgerBuilder = props => {
 
   const purchaseContinueHandler = () => {
     onInitPurchase();
-    props.history.push('/checkout');
+    props.history.push("/checkout");
   };
 
   const disabledInfo = {
@@ -82,7 +81,7 @@ const burgerBuilder = props => {
 
   if (ings) {
     burger = (
-      <Aux>
+      <Fragment>
         <Burger ingredients={ings} />
         <BuildControls
           ingredientAdded={onIngredientAdded}
@@ -93,7 +92,7 @@ const burgerBuilder = props => {
           isAuth={isAuthenticated}
           price={price}
         />
-      </Aux>
+      </Fragment>
     );
     orderSummary = (
       <OrderSummary
@@ -106,12 +105,12 @@ const burgerBuilder = props => {
   }
   // {salad: true, meat: false, ...}
   return (
-    <Aux>
+    <Fragment>
       <Modal show={purchasing} modalClosed={purchaseCancelHandler}>
         {orderSummary}
       </Modal>
       {burger}
-    </Aux>
+    </Fragment>
   );
 };
 

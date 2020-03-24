@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React, { useState, Fragment } from "react";
+import { connect } from "react-redux";
 
-import Aux from '../Aux/Aux';
-import classes from './Layout.css';
-import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
-import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import classes from "./Layout.css";
+import Toolbar from "../../components/Navigation/Toolbar/Toolbar";
+import SideDrawer from "../../components/Navigation/SideDrawer/SideDrawer";
 
 const layout = props => {
   const [sideDrawerIsVisible, setSideDrawerIsVisible] = useState(false);
@@ -18,7 +17,7 @@ const layout = props => {
   };
 
   return (
-    <Aux>
+    <Fragment>
       <Toolbar
         isAuth={props.isAuthenticated}
         drawerToggleClicked={sideDrawerToggleHandler}
@@ -29,7 +28,7 @@ const layout = props => {
         closed={sideDrawerClosedHandler}
       />
       <main className={classes.Content}>{props.children}</main>
-    </Aux>
+    </Fragment>
   );
 };
 
