@@ -1,0 +1,20 @@
+Fecha comunicado:{fecha}
+
+Estimado {nombre} {apellidos}, para Ticketmaster tu seguridad es nuestra prioridad. Estamos monitoreando las cosas de cerca y tomando las medidas de precaución aconsejadas por las autoridades locales. Sentimos mucho que tu evento "{tituloEvento}" se haya pospuesto o cancelado, consulta las nuevas fechas así como toda la información completa y actualizada de eventos pospuestos, cancelados y reembolsos en https://tmespeciales.ticketmaster.com.mx/avisos/coronavirus/ toda la información está concentrada en este sitio.
+
+La información de tu(s) boleto(s) se encuentra abajo, en caso de no ser el titular y requerir asistencia, pide al titular de la tarjeta que se ponga en contacto con nosotros.
+
+Evento: {tituloEvento}
+
+Fecha programada: {fechaEvento} (confirmar si fue cancelado o nueva fecha en el enlace de arriba)
+Boletos adquiridos: {asientos}
+
+Metodo de pago: {metodoPago}
+Dirección de Factura: {domicilio}
+
+Telefono de contacto registrado: {telefono}
+Referencia del evento: {codigoEvento}
+
+Si ya verificaste que tu evento se encuentra cancelado y realizaste la compra por nuestra página o vía telefónica, en automático se realizara el reembolso a la tarjeta con la que realizaste el cargo, te pedimos que lo verifiques en tu próximo estado de cuenta, aparecera con el titulo: "REEMBOLSO_TM_{folio}"
+
+Si tu evento se encuentra en pospuestos y no puedes asistir a la nueva fecha te pedimos que nos envíes un mail  para solicitar el reembolso de los  boletos y con el proceso que indica la siguiente liga https://tmespeciales.ticketmaster.com.mx/avisos/coronavirus/ , el reembolso solo lo puede solicitar el titular de la tarjeta. Te pedimos realizar el proceso de reembolso con estas características para brindarte un buen servicio, si ya nos enviaste un correo con tu petición, no es necesario que nos envíes otro, estamos atendiendo todas las solicitudes, agradecemos tu comprensión.
