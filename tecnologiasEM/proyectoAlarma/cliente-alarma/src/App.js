@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./App.css";
 
 const App = () => {
@@ -7,6 +8,17 @@ const App = () => {
     iniciaReloj();
   });
 
+  const [hora, setHora] = useState("");
+  const [mins, setMins] = useState("");
+  const [etiqueta, setEtiqueta] = useState("Ninguna alarma establecida...");
+
+  const horaCambiada = (e) => {
+    setHora(e.target.value);
+  };
+
+  const minutosCambiados = (e) => {
+    setMins(e.target.value);
+  };
   const iniciaReloj = () => {
     let today = new Date();
     let h = today.getHours();
@@ -23,24 +35,67 @@ const App = () => {
     } // add zero in front of numbers < 10
     return i;
   };
+
+  const programarAlarma = (event) => {
+    event.preventDefault();
+    console.log("hello there!");
+    const data = {
+      hora: hora,
+      minutos: mins,
+    };
+    let programada = "";
+    axios
+      .post("http://192.168.100.32:8080/alarma/setear", data)
+      .then((res) => {
+        setEtiqueta(res.data.mensaje);
+        programada = res.data.programada;
+      })
+      .catch((err) => console.log(err));
+    setTimeout(() => setEtiqueta(programada), 6000);
+  };
+  const cancelarAlarma = (event) => {
+    event.preventDefault();
+    axios
+      .get("http://192.168.100.32:8080/alarma/cancelar")
+      .then((res) => setEtiqueta(res.data.mensaje))
+      .catch((err) => console.log(err));
+    setTimeout(() => setEtiqueta("Ninguna alarma establecida..."), 6000);
+  };
   return (
     <div className="App">
       <h1>Sistema de alarma con Arduino</h1>
-      <div id="reloj" className="Reloj"></div>
-      <div className="flex">
+      <div id="reloj" className="Reloj" />
+      <form className="flex" onSubmit={programarAlarma}>
         Ingresa una hora:
         <section>
-          <input type="number" min="0" max="23"></input>:
-          <input type="number" min="0" max="59"></input>
+          <input
+            type="number"
+            min="0"
+            max="23"
+            placeholder="hora"
+            value={hora}
+            onChange={horaCambiada}
+            required
+          />
+          :
+          <input
+            type="number"
+            min="0"
+            max="59"
+            placeholder="min"
+            value={mins}
+            onChange={minutosCambiados}
+            required
+          />
         </section>
-        <button className="boton" id="set">
+        <button className="boton" id="set" type="submit">
           Setear alarma
         </button>
-        <label>Ninguna Alarma establecida...</label>
-        <button className="boton" id="cancel">
+        <label>{etiqueta}</label>
+        <button className="boton" id="cancel" onClick={cancelarAlarma}>
           Apagado remoto
         </button>
-      </div>
+      </form>
     </div>
   );
 };
