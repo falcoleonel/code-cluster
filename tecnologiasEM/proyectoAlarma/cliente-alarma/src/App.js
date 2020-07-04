@@ -1,24 +1,25 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import openSocket from "socket.io-client";
 import "./App.css";
 
 const App = () => {
   useEffect(() => {
-    // Update the document title using the browser API
+    // se utiliza para que el reloj cuente desde el primer renderizado
     iniciaReloj();
+    //abrimos conexion por web sockets con el servidor
+    const socket = openSocket("http://192.168.100.32:8080");
+
+    //entra a este evento cuando la alarma se apaga desde el arduino
+    socket.on("notifica", (data) => setEtiqueta(data.mensaje));
   });
 
+  // variables de estado
   const [hora, setHora] = useState("");
   const [mins, setMins] = useState("");
   const [etiqueta, setEtiqueta] = useState("Ninguna alarma establecida...");
 
-  const horaCambiada = (e) => {
-    setHora(e.target.value);
-  };
-
-  const minutosCambiados = (e) => {
-    setMins(e.target.value);
-  };
+  // funciones
   const iniciaReloj = () => {
     let today = new Date();
     let h = today.getHours();
@@ -30,15 +31,22 @@ const App = () => {
     setTimeout(iniciaReloj, 500);
   };
   const ajustaDigitos = (i) => {
-    if (i < 10) {
-      i = "0" + i;
-    } // add zero in front of numbers < 10
+    if (i < 10) i = "0" + i;
+
     return i;
+  };
+
+  // manejadores de eventos
+  const horaCambiada = (e) => {
+    setHora(e.target.value);
+  };
+
+  const minutosCambiados = (e) => {
+    setMins(e.target.value);
   };
 
   const programarAlarma = (event) => {
     event.preventDefault();
-    console.log("hello there!");
     const data = {
       hora: hora,
       minutos: mins,
@@ -51,7 +59,7 @@ const App = () => {
         programada = res.data.programada;
       })
       .catch((err) => console.log(err));
-    setTimeout(() => setEtiqueta(programada), 6000);
+    setTimeout(() => setEtiqueta(programada), 5000);
   };
   const cancelarAlarma = (event) => {
     event.preventDefault();
@@ -59,8 +67,10 @@ const App = () => {
       .get("http://192.168.100.32:8080/alarma/cancelar")
       .then((res) => setEtiqueta(res.data.mensaje))
       .catch((err) => console.log(err));
-    setTimeout(() => setEtiqueta("Ninguna alarma establecida..."), 6000);
+    setTimeout(() => setEtiqueta("Ninguna alarma establecida..."), 5000);
   };
+
+  // vista de la app
   return (
     <div className="App">
       <h1>Sistema de alarma con Arduino</h1>
@@ -91,7 +101,7 @@ const App = () => {
         <button className="boton" id="set" type="submit">
           Setear alarma
         </button>
-        <label>{etiqueta}</label>
+        <label className="box animate fadeInRight one">{etiqueta}</label>
         <button className="boton" id="cancel" onClick={cancelarAlarma}>
           Apagado remoto
         </button>

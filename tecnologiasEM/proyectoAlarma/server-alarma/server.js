@@ -3,15 +3,17 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const path = require("path");
 
+// funcion para ajustar minutos menores a 10
 const ajustaDigitos = (i) => {
-  if (i < 10) {
-    i = "0" + i;
-  }
+  if (i < 10) i = "0" + i;
   return i;
 };
+
+// se inicializa el servidor
 const server = express();
 server.use(bodyParser.json());
 
+// configuramos el acceso desde origenes distintos
 server.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
@@ -48,24 +50,24 @@ server.get("/alarma/estado", (req, res, next) => {
   const minProg = fs
     .readFileSync(path.resolve(__dirname, "minProg.txt"))
     .toString();
+  console.log("comparando hora actual con: " + horaProg + ":" + minProg);
 
-  console.log(horaProg + ":" + minProg);
-  console.log(h + ":" + m);
-
-  //si la la hora actual y programada coinciden actualiza el estado
+  // si la hora actual y programada coinciden, se actualiza el estado
   if (h > horaProg) {
-    console.log("Encendiendo alarma...");
-    fs.writeFileSync(path.resolve(__dirname, "estado.txt"), "Activada");
+    console.log("encendiendo alarma...");
+    fs.writeFileSync(path.resolve(__dirname, "estado.txt"), "1");
   }
   if (h == horaProg) {
     if (m >= minProg) {
-      console.log("Encendiendo alarma...");
-      fs.writeFileSync(path.resolve(__dirname, "estado.txt"), "Activada");
+      console.log("encendiendo alarma...");
+      fs.writeFileSync(path.resolve(__dirname, "estado.txt"), "1");
     }
   }
+  // leemos el estado actual
   const estadoActual = fs
     .readFileSync(path.resolve(__dirname, "estado.txt"))
     .toString();
+  console.log("enviando estado actual...");
   res.set("Content-Type", "text/plain");
   res.status(201).send(estadoActual);
 });
@@ -73,24 +75,35 @@ server.get("/alarma/estado", (req, res, next) => {
 // GET /alarma/apagar
 server.get("/alarma/apagar", (req, res, next) => {
   const today = new Date();
+  // guardamos valores inalcanzables para que no se prenda la alarma por error
   fs.writeFileSync("horaProg.txt", "24");
   fs.writeFileSync("minProg.txt", "60");
-  fs.writeFileSync("estado.txt", "Esperando");
-  //Si se implemente WebSockets mandar a la app cliente
-  console.log(`Alarm turned off at: ${today.toLocaleTimeString()}`);
+  // actualizamos el estado
+  fs.writeFileSync("estado.txt", "0");
+  io.emit("notifica", {
+    mensaje: "Alarma apagada por arduino a las: " + today.toLocaleTimeString(),
+  });
+  console.log(
+    "Alarma apagada por arduino a las: " + today.toLocaleTimeString()
+  );
   res.set("Content-Type", "text/plain");
   res.status(201).send("Alarma apagada exitosamente");
 });
 
 // GET /alarma/cancelar
 server.get("/alarma/cancelar", (req, res, next) => {
+  // guardamos valores inalcanzables para que no se prenda la alarma por error
   fs.writeFileSync("horaProg.txt", "24");
   fs.writeFileSync("minProg.txt", "60");
-  fs.writeFileSync("estado.txt", "Esperando");
+
+  //actualizamos el estado
+  fs.writeFileSync("estado.txt", "0");
   console.log("alarma cancelada desde aplicacion");
   res.status(201).json({
     mensaje: "Alarma cancelada!",
   });
 });
 
-server.listen(8080);
+// escoge el puerto del servidor y configura el uso de sockets
+const servicio = server.listen(8080);
+const io = require("socket.io")(servicio);
